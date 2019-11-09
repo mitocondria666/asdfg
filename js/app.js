@@ -1,6 +1,12 @@
+var url =window.location.href;
+var swlocalizacion = '/asdfg/sw.js';
+
 
 if(navigator.serviceWorker){
-    navigator.serviceWorker.register('/sw.js');
+    if(url.includes('localhost')){
+        swlocalizacion = '/sw.js';
+    }
+    navigator.serviceWorker.register(swlocalizacion);
 }
 
 
